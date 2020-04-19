@@ -7,10 +7,8 @@ end_of_line = lf
 insert_final_newline = true
 charset = utf-8
 trim_trailing_whitespace = true
-indent_size = 4
-
-[*.{ts,js,jsx,json,yaml,html,css,less}]
 indent_size = 2
 
-[*Makefile]
+[Makefile]
 indent_style = tab
+indent_size = 4
