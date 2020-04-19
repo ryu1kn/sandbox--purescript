@@ -9,7 +9,7 @@ import Test.Spec.Assertions (shouldEqual)
 import Test.Spec.Reporter.Console (consoleReporter)
 import Test.Spec.Runner (runSpec)
 import Euler (answer)
-import Foreign.Foo (greetImpl, numImpl, getName)
+import Foreign.Foo (greetImpl, numImpl, getName, giveName)
 
 main :: Effect Unit
 main = launchAff_ $ runSpec [consoleReporter] do
@@ -24,5 +24,8 @@ main = launchAff_ $ runSpec [consoleReporter] do
     it "number" do
       4.0 `shouldEqual` numImpl "4"
 
-    it "object - pass in" do
+    it "object - in" do
       "Mike" `shouldEqual` getName { name: "Mike" }
+
+    it "object - out" do
+      { name: "Mike" } `shouldEqual` giveName "Mike"
