@@ -4,7 +4,7 @@ import Prelude
 
 import Effect (Effect)
 import Effect.Aff (launchAff_)
-import Test.Spec (describe, it)
+import Test.Spec (describe, it, pending)
 import Test.Spec.Assertions (shouldEqual)
 import Test.Spec.Reporter.Console (consoleReporter)
 import Test.Spec.Runner (runSpec)
@@ -16,6 +16,8 @@ main = launchAff_ $ runSpec [consoleReporter] do
   describe "Euler" do
     it "Euler" do
       answer `shouldEqual` 233168
+
+    pending "a test in the future"
 
   describe "Foreign" do
     it "string" do
@@ -32,3 +34,5 @@ main = launchAff_ $ runSpec [consoleReporter] do
 
     it "custome object - out" do
       "Meow! (I'm Tama)" `shouldEqual` (F.makeNoise $ F.createCat "Tama")
+
+    pending "promise"
