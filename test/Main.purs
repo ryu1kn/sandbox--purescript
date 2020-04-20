@@ -35,4 +35,6 @@ main = launchAff_ $ runSpec [consoleReporter] do
     it "custome object - out" do
       "Meow! (I'm Tama)" `shouldEqual` (F.makeNoise <<< F.createCat) "Tama"
 
-    pending "promise"
+    it "promise - out from js" do
+      message <- F.echoAsync "World"
+      message `shouldEqual` "Hello World!"

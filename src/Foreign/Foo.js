@@ -21,3 +21,8 @@ class Cat {
 exports.createCat = name => new Cat(name)
 
 exports.makeNoise = cat => cat.makeNoise()
+
+exports._echoAsync = name => () =>
+  new Promise(resolve =>
+    setTimeout(() => { resolve('Hello ' + name + '!') }, 10)
+  )
