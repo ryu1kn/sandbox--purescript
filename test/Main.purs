@@ -44,7 +44,13 @@ main = launchAff_ $ runSpec [consoleReporter] do
     it "function - in" do
       F.greetCallback (\x -> "World") `shouldEqual` "Hello World!"
 
-    pending "function - out"
+    it "function - out" do
+      let greet = F.greetCallbackOut "World"
+      greet "anything" `shouldEqual` "Hello World!"
+
+    it "function - out, auto currying" do
+      F.greetCallbackOut "World" "anything" `shouldEqual` "Hello World!"
+
     pending "undefined - out"
     pending "null - out"
     pending "array - in"

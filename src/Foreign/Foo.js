@@ -14,7 +14,7 @@ class Cat {
   }
 
   makeNoise() {
-    return "Meow! (I'm " + this._name + ')'
+    return `Meow! (I'm ${this._name})`
   }
 }
 
@@ -24,7 +24,9 @@ exports.makeNoise = cat => cat.makeNoise()
 
 exports._echoAsync = name => () =>
   new Promise(resolve =>
-    setTimeout(() => { resolve('Hello ' + name + '!') }, 10)
+    setTimeout(() => { resolve(`Hello ${name}!`) }, 10)
   )
 
 exports.greetCallback = getName => `Hello ${getName()}!`
+
+exports.greetCallbackOut = name => _ => `Hello ${name}!`
