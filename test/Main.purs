@@ -32,9 +32,18 @@ main = launchAff_ $ runSpec [consoleReporter] do
     it "object - out" do
       F.giveName "Mike" `shouldEqual` { name: "Mike" }
 
+    pending "custome object - in"
+
     it "custome object - out" do
       (F.makeNoise <<< F.createCat) "Tama" `shouldEqual` "Meow! (I'm Tama)"
 
     it "promise - out from js" do
       message <- F.echoAsync "World"
       message `shouldEqual` "Hello World!"
+
+    pending "function - in"
+    pending "function - out"
+    pending "undefined - out"
+    pending "null - out"
+    pending "array - in"
+    pending "array - out"
