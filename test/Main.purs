@@ -33,6 +33,6 @@ main = launchAff_ $ runSpec [consoleReporter] do
       { name: "Mike" } `shouldEqual` F.giveName "Mike"
 
     it "custome object - out" do
-      "Meow! (I'm Tama)" `shouldEqual` (F.makeNoise $ F.createCat "Tama")
+      "Meow! (I'm Tama)" `shouldEqual` (F.makeNoise <<< F.createCat) "Tama"
 
     pending "promise"
