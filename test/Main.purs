@@ -21,19 +21,19 @@ main = launchAff_ $ runSpec [consoleReporter] do
 
   describe "Foreign" do
     it "string" do
-      "Hello World!" `shouldEqual` F.greetImpl "World"
+      F.greetImpl "World" `shouldEqual` "Hello World!"
 
     it "number" do
-      4.0 `shouldEqual` F.numImpl "4"
+      F.numImpl "4" `shouldEqual` 4.0
 
     it "object - in" do
-      "Mike" `shouldEqual` F.getName { name: "Mike" }
+      F.getName { name: "Mike" } `shouldEqual` "Mike"
 
     it "object - out" do
-      { name: "Mike" } `shouldEqual` F.giveName "Mike"
+      F.giveName "Mike" `shouldEqual` { name: "Mike" }
 
     it "custome object - out" do
-      "Meow! (I'm Tama)" `shouldEqual` (F.makeNoise <<< F.createCat) "Tama"
+      (F.makeNoise <<< F.createCat) "Tama" `shouldEqual` "Meow! (I'm Tama)"
 
     it "promise - out from js" do
       message <- F.echoAsync "World"
