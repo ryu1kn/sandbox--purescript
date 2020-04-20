@@ -53,5 +53,9 @@ main = launchAff_ $ runSpec [consoleReporter] do
 
     pending "undefined - out"
     pending "null - out"
-    pending "array - in"
-    pending "array - out"
+
+    it "array - in" do
+      F.add [1, 2, 3] `shouldEqual` 6
+
+    it "array - out" do
+      F.produceNumbers 3 `shouldEqual` [1, 2, 3]

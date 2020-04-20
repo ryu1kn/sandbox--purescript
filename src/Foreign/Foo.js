@@ -30,3 +30,7 @@ exports._echoAsync = name => () =>
 exports.greetCallback = getName => `Hello ${getName()}!`
 
 exports.greetCallbackOut = name => _ => `Hello ${name}!`
+
+exports.add = numbers => numbers.reduce((res, n) => res + n, 0)
+
+exports.produceNumbers = n => [...new Array(n)].map((_, i) => i + 1)
