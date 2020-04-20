@@ -26,3 +26,5 @@ exports._echoAsync = name => () =>
   new Promise(resolve =>
     setTimeout(() => { resolve('Hello ' + name + '!') }, 10)
   )
+
+exports.greetCallback = getName => `Hello ${getName()}!`

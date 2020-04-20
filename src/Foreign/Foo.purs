@@ -25,3 +25,5 @@ foreign import _echoAsync :: String -> Effect (Promise String)
 
 echoAsync :: String -> Aff String
 echoAsync name = liftEffect (_echoAsync name) >>= toAff
+
+foreign import greetCallback :: (String -> String) -> String

@@ -41,7 +41,9 @@ main = launchAff_ $ runSpec [consoleReporter] do
       message <- F.echoAsync "World"
       message `shouldEqual` "Hello World!"
 
-    pending "function - in"
+    it "function - in" do
+      F.greetCallback (\x -> "World") `shouldEqual` "Hello World!"
+
     pending "function - out"
     pending "undefined - out"
     pending "null - out"
